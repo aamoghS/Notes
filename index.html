@@ -1,78 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dropdown Menu</title>
-  <style>
-    /* Style the menu container */
-    .menu {
-      display: flex;
-      justify-content: space-between;
-      background-color: #333;
-      color: #fff;
-    }
+<style>
+ul {
+  list-style-type: Times New Roman;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
 
-    /* Style the menu sections */
-    .menu-section {
-      padding: 10px 10px;
-      position: relative;
-    }
+li {
+  float: left;
+}
 
-    /* Style the dropdown content */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
+li a, .dropbtn {
+  display: inline-block;
+  color: White;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-    /* Show dropdown content on hover */
-    .menu-section:hover .dropdown-content {
-      display: block;
-    }
 
-    /* Style the individual dropdown items */
-    .dropdown-item {
-      padding: 10px;
-      text-decoration: none;
-      display: block;
-      color: #333;
-    }
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
 
-    .dropdown-item:hover {
-      background-color: #ddd;
-    }
-  </style>
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: Black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
 </head>
 <body>
-  <div class="menu">
-    <div class="menu-section">
-      Mackay
-      <div class="dropdown-content">
-        <a href="chapter1.html" class="dropdown-item">Page 1-25</a>
-        <a href="chapter2.html" class="dropdown-item">Page 26-50</a>
-        <a href="bounce.html" class="dropdown-item">work in progress</a>
-      </div>
+
+<ul>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Mackay</a>
+    <div class="dropdown-content">
+      <a href="chapter1.html" class="dropdown-item">Page 1-25</a>
+      <a href="chapter2.html" class="dropdown-item">Page 26-50</a>
+      <a href="bounce.html" class="dropdown-item">work in progress</a>
     </div>
-    <div class="menu-section">
-      Johns
-      <div class="dropdown-content">
-        <a href="bounce.html" class="dropdown-item">Johns 6 poems quiz Information</a>
-        <a href="bounce.html" class="dropdown-item">work in progress</a>
-        <a href="bounce.html" class="dropdown-item">work in progress</a>
-      </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Johns</a>
+    <div class="dropdown-content">
+      <a href="bounce.html" class="dropdown-item">Johns 6 poems quiz Information</a>
+      <a href="bounce.html" class="dropdown-item">work in progress</a>
+      <a href="bounce.html" class="dropdown-item">work in progress</a>
     </div>
-    <div class="menu-section">
-      Balcar
-      <div class="dropdown-content">
-        <a href="bounce.html" class="dropdown-item">work in progress</a>
-        <a href="bounce.html" class="dropdown-item">work in progress</a>
-        <a href="bounce.html" class="dropdown-item">work in progress</a>
-      </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Balcar</a>
+    <div class="dropdown-content">
+      <a href="bounce.html" class="dropdown-item">work in progress</a>
+      <a href="bounce.html" class="dropdown-item">work in progress</a>
+      <a href="bounce.html" class="dropdown-item">work in progress</a>
     </div>
-  </div>
+  </li>
+</ul>
+
 </body>
 </html>
