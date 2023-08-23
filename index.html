@@ -61,6 +61,15 @@ li.dropdown {
   display: block;
 }
 </style>
+  <script>
+    function sendRequest() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://appnotes.adaptable.app/api/start", true);
+        xhr.send();
+    }
+
+    window.onload = sendRequest;
+</script>
 </head>
 <body>
 
