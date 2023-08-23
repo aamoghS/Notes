@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouncing Ball Animation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    
+    .ball {
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 50%;
+      position: absolute;
+      animation: bounce 5s infinite linear;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateX(0) translateY(0);
+      }
+      25% {
+        transform: translateX(calc(100vw - 50px)) translateY(0);
+      }
+      50% {
+        transform: translateX(calc(100vw - 50px)) translateY(calc(100vh - 50px));
+      }
+      75% {
+        transform: translateX(0) translateY(calc(100vh - 50px));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <p style="font-size: 24px;">Not done yet</p>
+  </div>
+</body>
+</html>
