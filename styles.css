@@ -1,0 +1,39 @@
+.ball {
+  position: relative; /* Add this to make sure content is positioned correctly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  border: 2px solid #fff;
+  animation: bounce 2s infinite alternate;
+  color: white;
+}
+
+@keyframes bounce {
+  from {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  to {
+    margin-top: -250px;
+    margin-left: 200px; /* Adjust this value to control the left-right distance */
+  }
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
