@@ -1,60 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rolling Ball Animation</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-    }
-
-    .ball {
-      width: 50px;
-      height: 50px;
-      background-color: #3498db;
-      border-radius: 50%;
-      position: absolute;
-      animation: roll 5s infinite linear;
-    }
-
-    @keyframes roll {
-      0% {
-        transform: translate(0, 0);
-      }
-      25% {
-        transform: translate(100vw - 50px, 0);
-      }
-      50% {
-        transform: translate(100vw - 50px, 100vh - 50px);
-      }
-      75% {
-        transform: translate(0, 100vh - 50px);
-      }
-      100% {
-        transform: translate(0, 0);
-      }
-    }
-
-    .center-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <title>Bouncing Ball</title>
 </head>
 <body>
-  <div class="ball"></div>
-  <div class="center-text">
-    <p style="font-size: 24px;">Not done yet</p>
-  </div>
+  <div class="ball">Not done</div>
 </body>
 </html>
