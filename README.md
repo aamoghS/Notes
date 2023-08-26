@@ -1,3 +1,4 @@
-# Notes
+#Webpage for my notes
 
-https://aamoghs.github.io/Notes/
+
+https://aamoghs.github.io/SchoolNotes/
