@@ -15,12 +15,10 @@
 
 @keyframes bounce {
   from {
-    margin-top: 0;
-    margin-left: 0;
+    margin-top: 500;
   }
   to {
-    margin-top: -250px;
-    margin-left: 200px; /* Adjust this value to control the left-right distance */
+    margin-top: -500px;
   }
 }
 
