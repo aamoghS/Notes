@@ -65,6 +65,30 @@ li.dropdown {
   display: block;
 }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Add click event listener to dropdown menu items
+  var dropdowns = document.querySelectorAll(".dropdown");
+  for (var i = 0; i < dropdowns.length; i++) {
+    dropdowns[i].addEventListener("click", function() {
+      // Toggle the display of the dropdown content
+      this.querySelector(".dropdown-content").classList.toggle("show");
+    });
+  }
+  
+  // Close dropdowns when clicking outside
+  window.addEventListener("click", function(event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdownContents = document.querySelectorAll(".dropdown-content");
+      for (var i = 0; i < dropdownContents.length; i++) {
+        if (dropdownContents[i].classList.contains("show")) {
+          dropdownContents[i].classList.remove("show");
+        }
+      }
+    }
+  });
+});
+</script>
 </head>
 <body>
 
