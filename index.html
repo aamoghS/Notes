@@ -64,35 +64,9 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-  .centered-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  .centered-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
 </style>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // JavaScript to change the background image
-    const button = document.getElementById('changeButton');
-    const body = document.body;
-    let currentImage = 1;
 
-    button.addEventListener('click', () => {
-      if (currentImage === 1) {
-        body.style.backgroundImage = "url('NotesWebpage/Images/gunna-gunna-wunna (1).gif')";
-        currentImage = 2;
-      } else {
-        body.style.backgroundImage = "url('NotesWebpage/Images/stanton.jpg')";
-        currentImage = 1;
-      }
-    });
-  });
 document.addEventListener("DOMContentLoaded", function() {
   // Add click event listener to dropdown menu items
   var dropdowns = document.querySelectorAll(".dropdown");
@@ -118,9 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </head>
 <body>
-<div class = "centered-container">
-  <button-id="changeButton">Change Background Button</button>
-    </div>
 <ul>
   <li class="dropdown">
     <a class="dropbtn">Mackay</a>
