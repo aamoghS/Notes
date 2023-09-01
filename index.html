@@ -64,6 +64,17 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+  .centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .centered-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
 </style>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -107,7 +118,9 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 </head>
 <body>
-
+<div class = "centered-container">
+  <button-id="changeButton">Change Background Button</button>
+    </div>
 <ul>
   <li class="dropdown">
     <a class="dropbtn">Mackay</a>
