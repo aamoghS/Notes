@@ -91,18 +91,18 @@ li.dropdown {
 }
 </style>
 <script>
+var backgroundImages = [
+  "url('NotesWebpage/Images/stanton.jpg')",
+  "url('NotesWebpage/Images/gunna-gunna-wunna (1).gif')",
+  // Add more image URLs here
+];
+var currentIndex = 0;
+
 function changeBackground() {
   var body = document.body;
-  var currentBg = body.style.backgroundImage;
-  var newBg = "url('NotesWebpage/Images/gunna-gunna-wunna (1).gif')";
-  
-  if (currentBg === newBg) {
-    // If the current background is the same as the new one, remove the background
-    body.style.backgroundImage = "";
-  } else {
-    // Set the new background image
-    body.style.backgroundImage = newBg;
-  }
+  currentIndex = (currentIndex + 1) % backgroundImages.length;
+  var newBg = backgroundImages[currentIndex];
+  body.style.backgroundImage = newBg;
 }
 </script>
 </head>
@@ -154,9 +154,9 @@ function changeBackground() {
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEi9ODwGp4Te5MFbU8ZAhNzMLZFQhG575PaqkRulM_XmVwYQ/viewform" class="dropdown-item">Tutoring underclassmen taking physics</a>
     </div>
   </li>
-<button id="changeBgButton" onclick="changeBackground()">Change Background</button>
   <li class="made-by">Made by aamogh sawant</li>
   <li id="currentTime" class="made-by"></li>
+<button id="changeBgButton" onclick="changeBackground()">Change Background</button>
 </ul>
 <script src="script.js"></script>
 </body>
