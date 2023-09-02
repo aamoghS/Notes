@@ -89,10 +89,6 @@ li.dropdown {
   margin: 10px;
   cursor: pointer;
 }
-#buttonAndTimeContainer {
-  display: flex;
-  align-items: center;
-}
 </style>
 <script>
 var backgroundImages = [
@@ -159,10 +155,8 @@ function changeBackground() {
     </div>
   </li>
   <li class="made-by">Made by aamogh sawant</li>
-  <div id="buttonAndTimeContainer">
-    <button id="changeBgButton" onclick="changeBackground()">Change Background</button>
-    <li id="currentTime" class="made-by"></li>
-  </div>
+  <li id="currentTime" class="made-by"></li>
+<button id="changeBgButton" onclick="changeBackground()">Change Background</button>
 </ul>
 <script src="script.js"></script>
 </body>
