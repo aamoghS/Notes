@@ -14,7 +14,7 @@ li {
   float: left;
 }
 body {
-  background-image: url('NotesWebpage/Images/gunna-gunna-wunna (1).gif'); 
+  background-image: url('NotesWebpage/Images/stanton.jpg'); 
   background-size: cover; 
   background-repeat:repeat; 
   background-attachment: fixed; 
@@ -60,7 +60,24 @@ li.dropdown {
   display: block;
   text-align: left;
 }
+/* Style the sub-submenu items */
+.dropdown-content .submenu {
+  position: relative;
+}
 
+.dropdown-content .submenu .submenu-content {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content .submenu:hover .submenu-content {
+  display: block;
+}
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -97,10 +114,14 @@ document.addEventListener("DOMContentLoaded", function() {
     <a class="dropbtn">Mackay</a>
     <div class="dropdown-content">
       <a href ="NotesWebpage/peoplefacts.html" class = "dropdown-item">People Facts 6B</a>
-      <a href="NotesWebpage/chapter1.html" class="dropdown-item">Page 1-25</a>
-      <a href="NotesWebpage/chapter2.html" class="dropdown-item">Page 26-50</a>
-      <a href="NotesWebpage/chapter3.html" class="dropdown-item">Page 51-67</a>
-      <a href="NotesWebpage/chapter4.html" class="dropdown-item">Page 68-80</a>
+        <div class="submenu">
+        <a href="#" class="dropdown-item">Pages 1-88</a>
+        <div class="submenu-content">
+          <a href="NotesWebpage/chapter1.html" class="dropdown-item">Page 1-25</a>
+            <a href="NotesWebpage/chapter2.html" class="dropdown-item">Page 26-50</a>
+        <a href="NotesWebpage/chapter3.html" class="dropdown-item">Page 51-67</a>
+        <a href="NotesWebpage/chapter4.html" class="dropdown-item">Page 68-80</a>
+        </div>
     </div>
   </li>
   <li class="dropdown">
