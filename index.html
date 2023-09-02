@@ -83,29 +83,19 @@ li.dropdown {
 }
 </style>
 <script>
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Add click event listener to dropdown menu items
-  var dropdowns = document.querySelectorAll(".dropdown");
-  for (var i = 0; i < dropdowns.length; i++) {
-    dropdowns[i].addEventListener("click", function() {
-      // Toggle the display of the dropdown content
-      this.querySelector(".dropdown-content").classList.toggle("show");
-    });
-  }
+function changeBackground() {
+  var body = document.body;
+  var currentBg = body.style.backgroundImage;
+  var newBg = "url('NotesWebpage/Images/gunna-wanna (1).gif')";
   
-  // Close dropdowns when clicking outside
-  window.addEventListener("click", function(event) {
-    if (!event.target.matches(".dropbtn")) {
-      var dropdownContents = document.querySelectorAll(".dropdown-content");
-      for (var i = 0; i < dropdownContents.length; i++) {
-        if (dropdownContents[i].classList.contains("show")) {
-          dropdownContents[i].classList.remove("show");
-        }
-      }
-    }
-  });
-});
+  if (currentBg === newBg) {
+    // If the current background is the same as the new one, remove the background
+    body.style.backgroundImage = "";
+  } else {
+    // Set the new background image
+    body.style.backgroundImage = newBg;
+  }
+}
 </script>
 </head>
 <body>
@@ -156,6 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEi9ODwGp4Te5MFbU8ZAhNzMLZFQhG575PaqkRulM_XmVwYQ/viewform" class="dropdown-item">Tutoring underclassmen taking physics</a>
     </div>
   </li>
+<button id="changeBgButton" onclick="changeBackground()">Change Background</button>
   <li class="made-by">Made by aamogh sawant</li>
   <li id="currentTime" class="made-by"></li>
 </ul>
