@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($enteredPassword === $password) {
         // Successful login, set a session variable to indicate the user is logged in
-        $_SESSION["logged_in"] = true;
+        $_SESSION["password_authenticated"] = true;
         header("Location: index.html"); // Redirect to your main page
         exit();
     } else {
@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
