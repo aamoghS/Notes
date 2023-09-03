@@ -4,6 +4,22 @@ var password = "your_password_here"; // Replace with your actual password
 // Check if the password has already been entered and stored in local storage
 var passwordEntered = localStorage.getItem("passwordEntered") === "true";
 
+// Function to prevent navigation to the linked pages
+function preventNavigation(event) {
+  if (!passwordEntered) {
+    event.preventDefault(); // Prevent the default hyperlink behavior
+    var enteredPassword = prompt("Enter the password to unlock the page:");
+    if (enteredPassword !== password) {
+      alert("Incorrect password. Access denied.");
+    } else {
+      // Password entered correctly, set the flag and navigate to the clicked page
+      passwordEntered = true;
+      localStorage.setItem("passwordEntered", "true");
+      window.location.href = event.target.getAttribute("href");
+    }
+  }
+}
+
 // Add event listeners for both hover and click
 function setupDropdowns() {
   var dropdowns = document.querySelectorAll(".dropdown");
@@ -121,3 +137,9 @@ setInterval(updateClock, 1000);
 
 updateClock();
 setupDropdowns();
+
+// Add event listeners to hyperlinks to prevent navigation
+var hyperlinks = document.querySelectorAll("a.dropdown-item");
+for (var i = 0; i < hyperlinks.length; i++) {
+  hyperlinks[i].addEventListener("click", preventNavigation);
+}
