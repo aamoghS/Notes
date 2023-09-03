@@ -19,7 +19,10 @@ function preventNavigation(event) {
     }
   }
 }
-
+// disable-right-click.js
+window.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
 // Add event listeners for both hover and click
 function setupDropdowns() {
   var dropdowns = document.querySelectorAll(".dropdown");
