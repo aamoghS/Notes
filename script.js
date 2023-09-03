@@ -49,8 +49,8 @@ function authenticatePassword() {
             // After a delay, redirect to "notes.html"
             setTimeout(function () {
                 window.location.href = "notes.html";
-            }, 10000); // Set the timeout to 2 seconds (2000 milliseconds)
-        }, 20000); // Set the timeout to 20 seconds (20000 milliseconds)
+            }, 3000); // Set the timeout to 2 seconds (2000 milliseconds)
+        }, 3000); // Set the timeout to 20 seconds (20000 milliseconds)
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
         wrongPasswordEntered = true;
