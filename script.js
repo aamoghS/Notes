@@ -37,24 +37,25 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 // script.js
 
-var backgroundImages = [
-  "url('NotesWebpage/Images/stanton.jpg')",
-  "url('NotesWebpage/Images/gunna-gunna-wunna (1).gif')",
-  "url('NotesWebpage/Images/tentonM.png')",
-  // Add more image URLs here
-];
 var currentIndex = 0;
 var password = "changebackground";
-function changeBackground() {
-  var body = document.body;
-  var enteredPassword = prompt("Enter the password to unlock the page:");
+var backgroundChanged = false; // Add a flag to track background changes
 
-  if (enteredPassword === password) {
-    currentIndex = (currentIndex + 1) % backgroundImages.length;
-    var newBg = backgroundImages[currentIndex];
-    body.style.backgroundImage = newBg;
+function changeBackground() {
+  if (!backgroundChanged) { // Check if background hasn't been changed
+    var body = document.body;
+    var enteredPassword = prompt("Enter the password to unlock the page:");
+
+    if (enteredPassword === password) {
+      currentIndex = (currentIndex + 1) % backgroundImages.length;
+      var newBg = backgroundImages[currentIndex];
+      body.style.backgroundImage = newBg;
+      backgroundChanged = true; // Set the flag to true after changing the background
+    } else {
+      alert("Incorrect password. Access denied.");
+    }
   } else {
-    alert("Incorrect password. Access denied.");
+    alert("Background has already been changed."); // Notify that background has already been changed
   }
 }
 
