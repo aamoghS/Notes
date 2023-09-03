@@ -1,5 +1,5 @@
 // Set your password here
-var password = "PasswordLock"; // Replace with your actual password
+var password = "your_password_here"; // Replace with your actual password
 
 // Check if the password has already been entered and stored in local storage
 var passwordEntered = localStorage.getItem("passwordEntered") === "true";
@@ -47,6 +47,15 @@ document.addEventListener("DOMContentLoaded", function() {
   var dropdowns = document.querySelectorAll(".dropdown");
   for (var i = 0; i < dropdowns.length; i++) {
     dropdowns[i].addEventListener("click", function(event) {
+      if (!passwordEntered) {
+        event.stopPropagation();
+        var enteredPassword = prompt("Enter the password to unlock the page:");
+        if (enteredPassword !== password) {
+          alert("Incorrect password. Access denied.");
+          return;
+        }
+      }
+
       var dropdownContent = this.querySelector(".dropdown-content");
       // Close other open submenus
       closeAllSubmenus();
