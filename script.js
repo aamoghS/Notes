@@ -1,4 +1,5 @@
 const correctPassword = "your_password_here";
+let wrongPasswordEntered = false;
 
 // This function is used to toggle the password visibility.
 function togglePassword() {
@@ -29,23 +30,41 @@ function authenticatePassword() {
     var enteredPassword = document.getElementById("pass").value;
     var loginStatus = document.getElementById("loginStatus");
 
-    if (enteredPassword === correctPassword) {
-        loginStatus.textContent = "Login successful!";
-        // Redirect to the specified file in the same folder on successful login
-        window.location.href = "notes.html";
-    } else {
-        loginStatus.textContent = "Incorrect password. Please try again.";
+    if (wrongPasswordEntered) {
+        // If the user entered the wrong password previously, prevent them from trying again for 10 seconds
+        loginStatus.textContent = "Please wait for 10 seconds before trying again.";
+        return;
     }
 
-    // Display the login status popup
-    var x = document.getElementById("msg");
-    x.style.display = "flex";
-    setTimeout(function () {
-        x.style.display = "none";
-        loginStatus.textContent = ""; // Clear the login status
-    }, 2000);
+    if (enteredPassword === correctPassword) {
+        loginStatus.textContent = "Login successful!";
+        // Display the login status popup for 20 seconds on successful login
+        var x = document.getElementById("msg");
+        x.style.display = "flex";
+        setTimeout(function () {
+            x.style.display = "none";
+            loginStatus.textContent = ""; // Clear the login status
+            // Redirect to the loading page
+            window.location.href = "loading.html";
+            // After a delay, redirect to "notes.html"
+            setTimeout(function () {
+                window.location.href = "notes.html";
+            }, 10000); // Set the timeout to 2 seconds (2000 milliseconds)
+        }, 20000); // Set the timeout to 20 seconds (20000 milliseconds)
+    } else {
+        loginStatus.textContent = "Incorrect password. Please try again.";
+        wrongPasswordEntered = true;
+        // Display the login status popup for 10 seconds on incorrect password
+        var x = document.getElementById("msg");
+        x.style.display = "flex";
+        setTimeout(function () {
+            x.style.display = "none";
+            loginStatus.textContent = ""; // Clear the login status
+            wrongPasswordEntered = false; // Reset the flag after 10 seconds
+        }, 10000); // Set the timeout to 10 seconds (10000 milliseconds)
+    }
 }
-var password = "your_password_here"; // Replace with your actual password
+var password = correctPassword; // Replace with your actual password
 
 // Check if the password has already been entered and stored in local storage
 var passwordEntered = localStorage.getItem("passwordEntered") === "true";
