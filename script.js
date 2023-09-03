@@ -26,6 +26,7 @@ function toggleIcon() {
 }
 
 // This function will authenticate the entered password.
+// This function will authenticate the entered password.
 function authenticatePassword() {
     var enteredPassword = document.getElementById("pass").value;
     var loginStatus = document.getElementById("loginStatus");
@@ -41,14 +42,21 @@ function authenticatePassword() {
         // Display the login status popup for 20 seconds on successful login
         var x = document.getElementById("msg");
         x.style.display = "flex";
+
         setTimeout(function () {
             x.style.display = "none";
             loginStatus.textContent = ""; // Clear the login status
-            // Stay on "loading.html" for 2 seconds before redirecting to "notes.html"
+
+            // Redirect to "loading.html" for 3 seconds
             setTimeout(function () {
-                window.location.href = "notes.html";
+                window.location.href = "loading.html";
+                
+                // After 3 seconds, redirect to "notes.html"
+                setTimeout(function () {
+                    window.location.href = "notes.html";
+                }, 3000); // Set the timeout to 3 seconds (3000 milliseconds)
             }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
-        }, 3000); // Set the timeout to 3 seconds (3000 milliseconds)
+        }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
         wrongPasswordEntered = true;
