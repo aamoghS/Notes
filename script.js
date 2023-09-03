@@ -55,7 +55,6 @@ function changeBackground() {
     body.style.backgroundImage = newBg;
   } else {
     alert("Incorrect password. Access denied.");
-    location.reload(); // Reload the page to keep it locked
   }
 }
 
