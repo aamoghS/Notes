@@ -44,13 +44,11 @@ function authenticatePassword() {
         setTimeout(function () {
             x.style.display = "none";
             loginStatus.textContent = ""; // Clear the login status
-            // Redirect to the loading page
-            window.location.href = "loading.html";
-            // After a delay, redirect to "notes.html"
+            // Stay on "loading.html" for 2 seconds before redirecting to "notes.html"
             setTimeout(function () {
                 window.location.href = "notes.html";
-            }, 3000); // Set the timeout to 2 seconds (2000 milliseconds)
-        }, 3000); // Set the timeout to 20 seconds (20000 milliseconds)
+            }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
+        }, 3000); // Set the timeout to 3 seconds (3000 milliseconds)
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
         wrongPasswordEntered = true;
