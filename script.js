@@ -1,3 +1,47 @@
+// Set your password here
+var password = "PasswordLock"; // Replace with your actual password
+
+// Check if the password has already been entered and stored in local storage
+var passwordEntered = localStorage.getItem("passwordEntered") === "true";
+
+// Add event listeners for both hover and click
+function setupDropdowns() {
+  var dropdowns = document.querySelectorAll(".dropdown");
+
+  for (var i = 0; i < dropdowns.length; i++) {
+    // Add hover event listener
+    dropdowns[i].addEventListener("mouseenter", function () {
+      if (!passwordEntered) return;
+      toggleDropdown(this);
+    });
+
+    // Add click event listener
+    dropdowns[i].addEventListener("click", function (event) {
+      if (!passwordEntered) {
+        event.stopPropagation();
+        var enteredPassword = prompt("Enter the password to unlock the page:");
+        if (enteredPassword === password) {
+          passwordEntered = true;
+          localStorage.setItem("passwordEntered", "true"); // Store the flag in local storage
+        } else {
+          alert("Incorrect password. Access denied.");
+          return;
+        }
+      }
+      toggleDropdown(this);
+    });
+
+    // Add mouseleave event listener to hide the submenu when not hovering
+    dropdowns[i].addEventListener("mouseleave", function () {
+      if (!passwordEntered) return;
+      var dropdownContent = this.querySelector(".dropdown-content");
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      }
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   // Add click event listener to dropdown menu items
   var dropdowns = document.querySelectorAll(".dropdown");
@@ -35,10 +79,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
-// script.js
 
 var currentIndex = 0;
-var password = "changebackground";
 var backgroundChanged = false; // Add a flag to track background changes
 
 function changeBackground() {
@@ -66,8 +108,7 @@ function updateClock() {
   currentTimeElement.textContent = timeString;
 }
 
-
 setInterval(updateClock, 1000);
 
-
 updateClock();
+setupDropdowns();
