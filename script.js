@@ -1,4 +1,50 @@
-// Set your password here
+const correctPassword = "your_password_here";
+
+// This function is used to toggle the password visibility.
+function togglePassword() {
+    toggleIcon();
+    var x = document.getElementById("pass");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+
+// This function will toggle the show or hide password icon.
+function toggleIcon() {
+    var x = document.getElementById("show_pass");
+    var y = document.getElementById("hide_pass");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        y.style.display = "none";
+    } else {
+        x.style.display = "none";
+        y.style.display = "block";
+    }
+}
+
+// This function will authenticate the entered password.
+function authenticatePassword() {
+    var enteredPassword = document.getElementById("pass").value;
+    var loginStatus = document.getElementById("loginStatus");
+
+    if (enteredPassword === correctPassword) {
+        loginStatus.textContent = "Login successful!";
+        // Redirect to the specified file in the same folder on successful login
+        window.location.href = "notes.html";
+    } else {
+        loginStatus.textContent = "Incorrect password. Please try again.";
+    }
+
+    // Display the login status popup
+    var x = document.getElementById("msg");
+    x.style.display = "flex";
+    setTimeout(function () {
+        x.style.display = "none";
+        loginStatus.textContent = ""; // Clear the login status
+    }, 2000);
+}
 var password = "your_password_here"; // Replace with your actual password
 
 // Check if the password has already been entered and stored in local storage
