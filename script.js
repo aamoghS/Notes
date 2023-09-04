@@ -39,6 +39,11 @@ function authenticatePassword() {
         return; // Exit the function when "offline" is entered
     }
 
+    if (!passwordEntered) {
+        // If the user hasn't entered the password yet, prevent further processing
+        return;
+    }
+
     if (wrongPasswordEntered) {
         // If the user entered the wrong password previously, prevent them from trying again for 10 seconds
         loginStatus.textContent = "Please wait for 10 seconds before trying again.";
