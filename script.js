@@ -38,7 +38,7 @@ function authenticatePassword() {
     }
 
     if (enteredPassword === correctPassword) {
-         passwordEntered = true;
+        passwordEntered = true;
         localStorage.setItem("passwordEntered", "true");
         loginStatus.textContent = "Login successful!";
         // Display the login status popup for 20 seconds on successful login
@@ -49,15 +49,8 @@ function authenticatePassword() {
             x.style.display = "none";
             loginStatus.textContent = ""; // Clear the login status
 
-            // Redirect to "loading.html" for 3 seconds
-            setTimeout(function () {
-                window.location.href = "loading.html";
-                
-                // After 3 seconds, redirect to "notes.html"
-                setTimeout(function () {
-                    window.location.href = "notes.html";
-                }, 3000); // Set the timeout to 3 seconds (3000 milliseconds)
-            }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
+            // Redirect to "notes.html" after a successful login
+            window.location.href = "notes.html";
         }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
@@ -71,7 +64,7 @@ function authenticatePassword() {
             wrongPasswordEntered = false; // Reset the flag after 10 seconds
         }, 10000); // Set the timeout to 10 seconds (10000 milliseconds)
     }
-}
+
 var password = correctPassword; // Replace with your actual password
 
 // Check if the password has already been entered and stored in local storage
