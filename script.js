@@ -38,6 +38,8 @@ function authenticatePassword() {
     }
 
     if (enteredPassword === correctPassword) {
+         passwordEntered = true;
+        localStorage.setItem("passwordEntered", "true");
         loginStatus.textContent = "Login successful!";
         // Display the login status popup for 20 seconds on successful login
         var x = document.getElementById("msg");
