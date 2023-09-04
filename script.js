@@ -188,28 +188,25 @@ document.addEventListener("DOMContentLoaded", function() {
 var currentIndex = 0;
 var backgroundChanged = false; // Add a flag to track background changes
 
+document.getElementById("changeBgButton").addEventListener("click", changeBackground);
+
 function changeBackground() {
   if (!backgroundChanged) { // Check if background hasn't been changed
     var body = document.body;
-    
-    // Check if the password has already been entered and stored in local storage
-    var passwordEntered = localStorage.getItem("passwordEntered") === "true";
-    
-    if (passwordEntered || password === "offline") {
-      var enteredPassword = prompt("Enter the password to unlock the page:");
+    var enteredPassword = prompt("Enter the password to unlock the page:");
 
-      if (enteredPassword === password || enteredPassword.toLowerCase() === "offline") {
-        currentIndex = (currentIndex + 1) % backgroundImages.length;
-        var newBg = backgroundImages[currentIndex];
-        body.style.backgroundImage = newBg;
-        backgroundChanged = true; // Set the flag to true after changing the background
-      } else {
-        alert("Incorrect password. Access denied.");
-      }
+    if (enteredPassword === password) {
+      currentIndex = (currentIndex + 1) % backgroundImages.length;
+      var newBg = backgroundImages[currentIndex];
+      body.style.backgroundImage = newBg;
+      backgroundChanged = true; // Set the flag to true after changing the background
+    } else {
+      alert("Incorrect password. Access denied.");
     }
+  } else {
+    alert("Background has already been changed."); // Notify that background has already been changed
   }
 }
-
 
 function updateClock() {
   const currentTimeElement = document.getElementById("currentTime");
