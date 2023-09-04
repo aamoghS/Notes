@@ -35,7 +35,7 @@ function authenticatePassword() {
         localStorage.setItem("passwordEntered", "true");
         loginStatus.textContent = "Offline mode activated!";
         // Redirect to "notes.html" on successful offline mode activation
-        window.location.href = "notes.html";
+        window.location.href = "./Web/notes.html";
         return; // Exit the function when "offline" is entered
     }
 
@@ -61,7 +61,7 @@ function authenticatePassword() {
             loginStatus.textContent = ""; // Clear the login status
 
             // Redirect to "notes.html" after a successful login
-            window.location.href = ".\Web\notes.html";
+            window.location.href = "./Web/notes.html";
         }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
