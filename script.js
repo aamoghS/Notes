@@ -49,8 +49,10 @@ function authenticatePassword() {
             x.style.display = "none";
             loginStatus.textContent = ""; // Clear the login status
 
-            // Redirect to "notes.html" after a successful login
-            window.location.href = "notes.html";
+            if (!passwordEntered) {
+                // Redirect to "notes.html" only if the password was entered correctly
+                window.location.href = "notes.html";
+            }
         }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
@@ -64,7 +66,7 @@ function authenticatePassword() {
             wrongPasswordEntered = false; // Reset the flag after 10 seconds
         }, 10000); // Set the timeout to 10 seconds (10000 milliseconds)
     }
-
+}
 var password = correctPassword; // Replace with your actual password
 
 // Check if the password has already been entered and stored in local storage
