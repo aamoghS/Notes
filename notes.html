@@ -61,7 +61,7 @@ li.dropdown {
   text-align: left;
 }
 /* Style the sub-submenu items */
-.dropdown-content .submenu{
+.dropdown-content .submenu.submenu-content {
   position: relative;
 }
 
@@ -76,7 +76,7 @@ li.dropdown {
 }
 
 /* Hover properties for sub-submenu items */
-.dropdown-content .submenu:hover .submenu-content {
+.dropdown-content .submenu:hover .submenu-content:hover {
   display: block;
 }
 
@@ -94,7 +94,7 @@ li.dropdown {
 }
 
 /* Position sub-submenu to the right */
-.submenu:hover .submenu-content {
+.submenu:hover .submenu-content:hover {
   display: block;
   left: 100%; /* Adjust the positioning as needed */
   top: 0; /* Adjust the positioning as needed */
@@ -143,8 +143,6 @@ li.dropdown {
         <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
         <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
         <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-
-        <!-- Submenu within the existing submenu -->
         <div class="submenu">
           <a href="#" class="dropdown-item">Submenu within Submenu</a>
           <div class="submenu-content">
