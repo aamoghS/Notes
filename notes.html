@@ -1,9 +1,11 @@
+tml
+Copy code
 <!DOCTYPE html>
 <html>
 <head>
 <style>
 ul {
-  list-style-type: Times New Roman;
+  list-style-type: none; /* Removed 'Times New Roman' as it's not a valid list-style-type */
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -13,25 +15,29 @@ ul {
 li {
   float: left;
 }
+
 body {
-  background-image: url('NotesWebpage/Images/stanton.jpg'); 
-  background-size: cover; 
-  background-repeat:repeat; 
-  background-attachment: fixed; 
+  background-image: url('NotesWebpage/Images/stanton.jpg');
+  background-size: cover;
+  background-repeat: no-repeat; /* Corrected 'repeat' to 'no-repeat' */
+  background-attachment: fixed;
+  margin: 0; /* Added to remove body margin */
 }
+
 li a, .dropbtn {
   display: inline-block;
-  color: White;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
+
 li.made-by {
   float: right;
   display: flex;
   align-items: center;
   padding-right: 18px;
-  padding-top: 10px; 
+  padding-top: 10px;
   font-size: 14px;
   color: white;
 }
@@ -49,17 +55,18 @@ li.dropdown {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: Black;
+  color: black; /* Changed 'Black' to 'black' for consistency */
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
 }
+
 /* Style the sub-submenu items */
 .dropdown-content .submenu {
   position: relative;
@@ -72,15 +79,17 @@ li.dropdown {
   top: 0;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content .submenu:hover .submenu-content {
   display: block;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 #changeBgButton {
   background-color: #333;
   color: white;
@@ -96,13 +105,13 @@ li.dropdown {
   <li class="dropdown">
     <a class="dropbtn">Balcar HL</a>
     <div class="dropdown-content">
-    <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
-        <div class="submenu">
+      <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+      <div class="submenu">
         <a href="#" class="dropdown-item">Collection</a>
         <div class="submenu-content">
-        <a href="NotesWebpage/CompSci/collectionsNotes.html" class="dropdown-item">Collections- Intro to Data 1</a>
+          <a href="NotesWebpage/CompSci/collectionsNotes.html" class="dropdown-item">Collections- Intro to Data 1</a>
         </div>
-        </div>
+      </div>
       <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
     </div>
   </li>
@@ -115,56 +124,55 @@ li.dropdown {
     </div>
   </li>
   <li class="dropdown">
-  <a class="dropbtn">Raj (C and IB SL|HL)</a>
-  <div class="dropdown-content">
-    <!-- First submenu -->
-    <div class="submenu">
-      <a href="#" class="dropdown-item">Physics C</a>
-      <div class="submenu-content">
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
-        <!-- Submenu within the existing submenu -->
-        <div class="submenu">
-          <a href="#" class="dropdown-item">Submenu within Submenu</a>
-          <div class="submenu-content">
-            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 1</a>
-            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 2</a>
-            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 3</a>
+    <a class="dropbtn">Raj (C and IB SL|HL)</a>
+    <div class="dropdown-content">
+      <!-- First submenu -->
+      <div class="submenu">
+        <a href="#" class="dropdown-item">Physics C</a>
+        <div class="submenu-content">
+          <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+          <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+          <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+          <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+          <!-- Submenu within the existing submenu -->
+          <div class="submenu">
+            <a href="#" class="dropdown-item">Submenu within Submenu</a>
+            <div class="submenu-content">
+              <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 1</a>
+              <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 2</a>
+              <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 3</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Second submenu -->
-    <div class="submenu">
-      <a href="#" class="dropdown-item">IB Physics</a>
-      <div class="submenu-content">
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+      <!-- Second submenu -->
+      <div class="submenu">
+        <a href="#" class="dropdown-item">IB Physics</a>
+        <div class="submenu-content">
+          <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+          <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+          <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+          <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+        </div>
       </div>
     </div>
-  </div>
-</li>
+  </li>
   <li class="dropdown">
     <a class="dropbtn">Mackay</a>
     <div class="dropdown-content">
-      <a href ="NotesWebpage/peoplefacts.html" class = "dropdown-item">People Facts 6B</a>
-        <div class="submenu">
+      <a href="NotesWebpage/peoplefacts.html" class="dropdown-item">People Facts 6B</a>
+      <div class="submenu">
         <a href="#" class="dropdown-item">Pages 1-88</a>
         <div class="submenu-content">
-        <a href="NotesWebpage/History/chapter1.html" class="dropdown-item">Page 1-25</a>
-        <a href="NotesWebpage/History/chapter2.html" class="dropdown-item">Page 26-50</a>
-        <a href="NotesWebpage/History/chapter3.html" class="dropdown-item">Page 51-67</a>
-        <a href="NotesWebpage/History/chapter4.html" class="dropdown-item">Page 68-80</a>
+          <a href="NotesWebpage/History/chapter1.html" class="dropdown-item">Page 1-25</a>
+          <a href="NotesWebpage/History/chapter2.html" class="dropdown-item">Page 26-50</a>
+          <a href="NotesWebpage/History/chapter3.html" class="dropdown-item">Page 51-67</a>
+          <a href="NotesWebpage/History/chapter4.html" class="dropdown-item">Page 68-80</a>
         </div>
+      </div>
     </div>
-</div>
   </li>
-</li>  
   <li class="dropdown">
     <a class="dropbtn">Sharpe (comp gov)</a>
     <div class="dropdown-content">
@@ -173,15 +181,14 @@ li.dropdown {
       <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
     </div>
   </li>
-      
   <li class="dropdown">
     <a class="dropbtn">Physics Club Info</a>
     <div class="dropdown-content">
-      <a href="https://teams.microsoft.com/l/team/19%3a1RLbGNWh2xf1fuDl3QhMCE_S_DZflX0q45r-CA2F2eY1%40thread.tacv2/conversations?groupId=387770ce-c3c0-4ea9-a7ae-0978b83ed842&tenantId=8deb1d4d-d0a4-4d04-89ae-f7076cbaa9fb
-" class="dropdown-item">Physics Club Teams</a>
+      <a href="https://teams.microsoft.com/l/team/19%3a1RLbGNWh2xf1fuDl3QhMCE_S_DZflX0q45r-CA2F2eY1%40thread.tacv2/conversations?groupId=387770ce-c3c0-4ea9-a7ae-0978b83ed842&tenantId=8deb1d4d-d0a4-4d04-89ae-f7076cbaa9fb" class="dropdown-item">Physics Club Teams</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEi9ODwGp4Te5MFbU8ZAhNzMLZFQhG575PaqkRulM_XmVwYQ/viewform" class="dropdown-item">Tutoring underclassmen taking physics</a>
     </div>
   </li>
+</ul>
   <li class="made-by">Made by aamogh sawant</li>
   <li id="currentTime" class="made-by"></li>
 <button id="changeBgButton" onclick="changeBackground()">Change Background</button>
