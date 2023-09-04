@@ -78,7 +78,7 @@ function preventNavigation(event) {
   if (!passwordEntered) {
     event.preventDefault(); // Prevent the default hyperlink behavior
     var enteredPassword = prompt("Enter the password to unlock the page:");
-    if (enteredPassword !== password || enteredPassword != "offline" ) {
+    if (enteredPassword !== password) {
       alert("Incorrect password. Access denied.");
     } else {
       // Password entered correctly, set the flag and navigate to the clicked page
