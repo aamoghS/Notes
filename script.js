@@ -185,27 +185,11 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-var currentIndex = 0;
-var backgroundChanged = false; // Add a flag to track background changes
-
-document.getElementById("changeBgButton").addEventListener("click", changeBackground);
-
 function changeBackground() {
-  if (!backgroundChanged) { // Check if background hasn't been changed
-    var body = document.body;
-    var enteredPassword = prompt("Enter the password to unlock the page:");
-
-    if (enteredPassword === password) {
-      currentIndex = (currentIndex + 1) % backgroundImages.length;
-      var newBg = backgroundImages[currentIndex];
-      body.style.backgroundImage = newBg;
-      backgroundChanged = true; // Set the flag to true after changing the background
-    } else {
-      alert("Incorrect password. Access denied.");
-    }
-  } else {
-    alert("Background has already been changed."); // Notify that background has already been changed
-  }
+  var body = document.body;
+  currentIndex = (currentIndex + 1) % backgroundImages.length;
+  var newBg = backgroundImages[currentIndex];
+  body.style.backgroundImage = newBg;
 }
 
 function updateClock() {
