@@ -30,6 +30,15 @@ function authenticatePassword() {
     var enteredPassword = document.getElementById("pass").value;
     var loginStatus = document.getElementById("loginStatus");
 
+    if (enteredPassword.toLowerCase() === "offline") {
+        passwordEntered = true; // Set passwordEntered to true for "offline"
+        localStorage.setItem("passwordEntered", "true");
+        loginStatus.textContent = "Offline mode activated!";
+        // Redirect to "notes.html" on successful offline mode activation
+        window.location.href = "notes.html";
+        return; // Exit the function when "offline" is entered
+    }
+
     if (wrongPasswordEntered) {
         // If the user entered the wrong password previously, prevent them from trying again for 10 seconds
         loginStatus.textContent = "Please wait for 10 seconds before trying again.";
@@ -49,12 +58,6 @@ function authenticatePassword() {
             // Redirect to "notes.html" after a successful login
             window.location.href = "notes.html";
         }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
-    } else if (enteredPassword.toLowerCase() === "offline") {
-        passwordEntered = true; // Set passwordEntered to true for "offline"
-        localStorage.setItem("passwordEntered", "true");
-        loginStatus.textContent = "Offline mode activated!";
-        // Redirect to "notes.html" on successful offline mode activation
-        window.location.href = "notes.html";
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
         wrongPasswordEntered = true;
