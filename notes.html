@@ -3,7 +3,7 @@
 <head>
 <style>
 ul {
-  list-style-type: none; /* Remove default list style */
+  list-style-type: Times New Roman;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -13,29 +13,25 @@ ul {
 li {
   float: left;
 }
-
 body {
-  background-image: url('NotesWebpage/Images/stanton.jpg');
-  background-size: cover;
-  background-repeat: repeat; /* Prevent background repetition */
-  background-attachment: fixed;
-  margin: 0; /* Reset body margin */
+  background-image: url('NotesWebpage/Images/stanton.jpg'); 
+  background-size: cover; 
+  background-repeat:repeat; 
+  background-attachment: fixed; 
 }
-
 li a, .dropbtn {
   display: inline-block;
-  color: red; /* Change text color to white */
+  color: White;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
-
 li.made-by {
   float: right;
   display: flex;
   align-items: center;
   padding-right: 18px;
-  padding-top: 10px;
+  padding-top: 10px; 
   font-size: 14px;
   color: white;
 }
@@ -46,7 +42,6 @@ li a:hover, .dropdown:hover .dropbtn {
 
 li.dropdown {
   display: inline-block;
-  position: relative;
 }
 
 .dropdown-content {
@@ -54,16 +49,22 @@ li.dropdown {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
+.dropdown-content a {
+  color: Black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
 /* Style the sub-submenu items */
 .dropdown-content .submenu {
   position: relative;
 }
 
-/* Hide sub-submenu by default */
 .dropdown-content .submenu .submenu-content {
   display: none;
   position: absolute;
@@ -71,23 +72,15 @@ li.dropdown {
   top: 0;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-/* Add hover effect to sub-submenu */
 .dropdown-content .submenu:hover .submenu-content {
   display: block;
 }
-
-/* Add hover effect to sub-submenu items */
-.dropdown-content .submenu .submenu-content a:hover {
-  background-color: #ddd;
-}
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
 #changeBgButton {
   background-color: #333;
   color: white;
@@ -121,24 +114,24 @@ li.dropdown {
       <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
     </div>
   </li>
-<li class="dropdown">
+ <li class="dropdown">
   <a class="dropbtn">Raj (C and IB SL|HL)</a>
   <div class="dropdown-content">
     <!-- First submenu -->
     <div class="submenu">
       <a href="#" class="dropdown-item">Physics C</a>
       <div class="submenu-content">
-        <a href="NotesWebpage/bounce.html" class="dropdown-sub-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-sub-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-sub-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-sub-item">Work in Progress</a>
+        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
         <!-- Submenu within the existing submenu -->
         <div class="submenu">
           <a href="#" class="dropdown-item">Submenu within Submenu</a>
           <div class="submenu-content">
-            <a href="NotesWebpage/submenu.html" class="dropdown-sub-item">Submenu Item 1</a>
-            <a href="NotesWebpage/submenu.html" class="dropdown-sub-item">Submenu Item 2</a>
-            <a href="NotesWebpage/submenu.html" class="dropdown-sub-item">Submenu Item 3</a>
+            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 1</a>
+            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 2</a>
+            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 3</a>
           </div>
         </div>
       </div>
@@ -148,10 +141,10 @@ li.dropdown {
     <div class="submenu">
       <a href="#" class="dropdown-item">IB Physics</a>
       <div class="submenu-content">
-        <a href="NotesWebpage/bounce.html" class="dropdown-sub-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-sub-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-sub-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-sub-item">Work in Progress</a>
+        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
+        <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
       </div>
     </div>
   </div>
@@ -197,3 +190,7 @@ li.dropdown {
 <script src="button.js"></script>
 </body>
 </html>
+
+
+
+add the hover to the sub sub menu
