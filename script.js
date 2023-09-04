@@ -196,11 +196,6 @@ function changeBackground() {
     var passwordEntered = localStorage.getItem("passwordEntered") === "true";
     
     if (passwordEntered || password === "offline") {
-      currentIndex = (currentIndex + 1) % backgroundImages.length;
-      var newBg = backgroundImages[currentIndex];
-      body.style.backgroundImage = newBg;
-      backgroundChanged = true; // Set the flag to true after changing the background
-    } else {
       var enteredPassword = prompt("Enter the password to unlock the page:");
 
       if (enteredPassword === password || enteredPassword.toLowerCase() === "offline") {
