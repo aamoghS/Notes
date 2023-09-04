@@ -1,5 +1,5 @@
 const images = [
-  '../images/image1.jpg', // Relative path to the "images" directory
+  '../NotesWebpage/Images/tentonM.png, // Relative path to the "images" directory
   '../images/image2.jpg',
   '../images/image3.jpg',
 ];
