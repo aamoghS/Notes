@@ -61,7 +61,7 @@ li.dropdown {
   text-align: left;
 }
 /* Style the sub-submenu items */
-.dropdown-content .submenu.submenu-content {
+.dropdown-content .submenu {
   position: relative;
 }
 
@@ -75,11 +75,9 @@ li.dropdown {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
-/* Hover properties for sub-submenu items */
-.dropdown-content .submenu:hover .submenu-content:hover {
+.dropdown-content .submenu:hover .submenu-content {
   display: block;
 }
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -102,56 +100,43 @@ li.dropdown {
         <div class="submenu">
         <a href="#" class="dropdown-item">Collection</a>
         <div class="submenu-content">
-        <a href="NotesWebpage/CompSci/collectionsNotes.html" class="dropdown-item">Collections- Intro to Data 1</a>
+        <a href="NotesWebpage/collectionsNotes.html" class="dropdown-item">Collections- Intro to Data 1</a>
         </div>
         </div>
       <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
     </div>
   </li>
-  <li class="dropdown">
+   <li class="dropdown">
     <a class="dropbtn">Johns</a>
     <div class="dropdown-content">
-      <a href="NotesWebpage/English/johnspoem1and6.html" class="dropdown-item">Poems1-6</a>
+      <a href="NotesWebpage/johnspoem1and6.html" class="dropdown-item">Poems1-6</a>
       <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
       <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
     </div>
   </li>
-<li class="dropdown">
-  <a class="dropbtn">Raj (C and IB SL|HL)</a>
-  <div class="dropdown-content">
-    <!-- First submenu -->
-    <div class="submenu">
-      <a href="#" class="dropdown-item">Physics C</a>
-      <div class="submenu-content">
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-        <div class="submenu">
-          <a href="#" class="dropdown-item">Submenu within Submenu</a>
-          <div class="submenu-content">
-            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 1</a>
-            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 2</a>
-            <a href="NotesWebpage/submenu.html" class="dropdown-item">Submenu Item 3</a>
-          </div>
+ <li class="dropdown">
+    <a class="dropbtn">Raj C | IB SL and HL</a>
+    <div class="dropdown-content">
+      <div class="submenu">
+        <a href="#" class="dropdown-item">Physics C</a>
+        <div class="submenu-content">
+        <a href="NotesWebpage/chapter1.html" class="dropdown-item">not done</a>
+        <a href="NotesWebpage/chapter2.html" class="dropdown-item">not done</a>
+        <a href="NotesWebpage/chapter3.html" class="dropdown-item">not done</a>
+        <a href="NotesWebpage/chapter4.html" class="dropdown-item">not done</a>
         </div>
-        <!-- End of Submenu within Submenu -->
-
-      </div>
     </div>
-    
-    <!-- Second submenu -->
-    <div class="submenu">
-      <a href="#" class="dropdown-item">IB Physics</a>
-      <div class="submenu-content">
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-        <a href="NotesWebpage/bounce.html" class="dropdown-item">Work in Progress</a>
-      </div>
+        <div class="submenu">
+        <a href="#" class="dropdown-item">Ib Physics </a>
+        <div class="submenu-content">
+        <a href="NotesWebpage/chapter1.html" class="dropdown-item">not done</a>
+        <a href="NotesWebpage/chapter2.html" class="dropdown-item">not done</a>
+        <a href="NotesWebpage/chapter3.html" class="dropdown-item">not done</a>
+        <a href="NotesWebpage/chapter4.html" class="dropdown-item">not done</a>
+        </div>
     </div>
-  </div>
-</li>
+</div>
+  </li>
   <li class="dropdown">
     <a class="dropbtn">Mackay</a>
     <div class="dropdown-content">
@@ -159,15 +144,14 @@ li.dropdown {
         <div class="submenu">
         <a href="#" class="dropdown-item">Pages 1-88</a>
         <div class="submenu-content">
-        <a href="NotesWebpage/History/chapter1.html" class="dropdown-item">Page 1-25</a>
-        <a href="NotesWebpage/History/chapter2.html" class="dropdown-item">Page 26-50</a>
-        <a href="NotesWebpage/History/chapter3.html" class="dropdown-item">Page 51-67</a>
-        <a href="NotesWebpage/History/chapter4.html" class="dropdown-item">Page 68-80</a>
+        <a href="NotesWebpage/chapter1.html" class="dropdown-item">Page 1-25</a>
+        <a href="NotesWebpage/chapter2.html" class="dropdown-item">Page 26-50</a>
+        <a href="NotesWebpage/chapter3.html" class="dropdown-item">Page 51-67</a>
+        <a href="NotesWebpage/chapter4.html" class="dropdown-item">Page 68-80</a>
         </div>
     </div>
 </div>
   </li>
-</li>  
   <li class="dropdown">
     <a class="dropbtn">Sharpe (comp gov)</a>
     <div class="dropdown-content">
@@ -176,7 +160,6 @@ li.dropdown {
       <a href="NotesWebpage/bounce.html" class="dropdown-item">work in progress</a>
     </div>
   </li>
-      
   <li class="dropdown">
     <a class="dropbtn">Physics Club Info</a>
     <div class="dropdown-content">
@@ -190,8 +173,5 @@ li.dropdown {
 <button id="changeBgButton" onclick="changeBackground()">Change Background</button>
 </ul>
 <script src="script.js"></script>
-<script src="button.js"></script>
 </body>
 </html>
-
-
