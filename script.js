@@ -184,19 +184,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 });
-var button = document.getElementById("changeBackgroundButton");
-if (button) {
-  button.addEventListener("click", function () {
-    changeBackground();
-  });
-}
-function changeBackground() {
-  var body = document.body;
-  currentIndex = (currentIndex + 1) % backgroundImages.length;
-  var newBg = backgroundImages[currentIndex];
-  body.style.backgroundImage = newBg;
-}
-
 function updateClock() {
   const currentTimeElement = document.getElementById("currentTime");
   const now = new Date();
