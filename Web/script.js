@@ -61,7 +61,7 @@ function authenticatePassword() {
             loginStatus.textContent = ""; // Clear the login status
 
             // Redirect to "notes.html" after a successful login
-            window.location.href = "notes.html";
+            window.location.href = ".\Web\notes.html";
         }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
