@@ -1,4 +1,4 @@
-const correctPassword = "your_password_here";
+correctPassword = "your_password_here";
 let wrongPasswordEntered = false;
 
 // This function is used to toggle the password visibility.
