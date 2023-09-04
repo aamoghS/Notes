@@ -26,7 +26,6 @@ function toggleIcon() {
 }
 
 // This function will authenticate the entered password.
-// This function will authenticate the entered password.
 function authenticatePassword() {
     var enteredPassword = document.getElementById("pass").value;
     var loginStatus = document.getElementById("loginStatus");
@@ -38,8 +37,6 @@ function authenticatePassword() {
     }
 
     if (enteredPassword === correctPassword) {
-        passwordEntered = true;
-        localStorage.setItem("passwordEntered", "true");
         loginStatus.textContent = "Login successful!";
         // Display the login status popup for 20 seconds on successful login
         var x = document.getElementById("msg");
@@ -52,6 +49,12 @@ function authenticatePassword() {
             // Redirect to "notes.html" after a successful login
             window.location.href = "notes.html";
         }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
+    } else if (enteredPassword.toLowerCase() === "offline") {
+        passwordEntered = true; // Set passwordEntered to true for "offline"
+        localStorage.setItem("passwordEntered", "true");
+        loginStatus.textContent = "Offline mode activated!";
+        // Redirect to "notes.html" on successful offline mode activation
+        window.location.href = "notes.html";
     } else {
         loginStatus.textContent = "Incorrect password. Please try again.";
         wrongPasswordEntered = true;
