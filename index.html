@@ -3,6 +3,7 @@
 <head>
     <title>Password Authentication</title>
     <style>
+
         body {
 			margin: 0;
 			padding: 0;
@@ -13,6 +14,16 @@
 			background-color: rgb(56, 56, 56);
 		}
 
+		.fullscreen-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            border: none;
+        }
+		
 		.main {
 			height: 360px;
 			padding: 20px;
@@ -125,6 +136,7 @@
 </head>
 
 <body>
+
     <div class="main">
         <div class="userImage">
             <h1>Notes</h1>
@@ -151,10 +163,12 @@
             </button>
         </div>
     </div>
+
     <div class="popup" id="msg">
         <h2>Login Status</h2>
         <p id="loginStatus"></p>
     </div>
+
     <script src="script.js"></script>
 <script src="button.js"></script>
 </body>

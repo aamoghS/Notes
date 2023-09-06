@@ -1,7 +1,8 @@
-var correctPassword = "Password";
+const _0x400632=_0x5a04;(function(_0x28e816,_0x514c82){const _0x5085de=_0x5a04,_0x3de6ed=_0x28e816();while(!![]){try{const _0x182236=parseInt(_0x5085de(0x7b))/0x1*(-parseInt(_0x5085de(0x88))/0x2)+-parseInt(_0x5085de(0x84))/0x3+parseInt(_0x5085de(0x79))/0x4+-parseInt(_0x5085de(0x7f))/0x5*(parseInt(_0x5085de(0x85))/0x6)+parseInt(_0x5085de(0x81))/0x7+parseInt(_0x5085de(0x86))/0x8*(-parseInt(_0x5085de(0x7d))/0x9)+parseInt(_0x5085de(0x7a))/0xa;if(_0x182236===_0x514c82)break;else _0x3de6ed['push'](_0x3de6ed['shift']());}catch(_0x166583){_0x3de6ed['push'](_0x3de6ed['shift']());}}}(_0x59db,0xeb557));function _0x5a04(_0x4fb45a,_0x3bbde7){const _0x59db16=_0x59db();return _0x5a04=function(_0x5a04b3,_0x55df46){_0x5a04b3=_0x5a04b3-0x79;let _0x506549=_0x59db16[_0x5a04b3];return _0x506549;},_0x5a04(_0x4fb45a,_0x3bbde7);}function reverseString(_0x4ddd21){const _0x53574a=_0x5a04;return _0x4ddd21[_0x53574a(0x89)]('')[_0x53574a(0x7c)]()[_0x53574a(0x7e)]('');}function rot13(_0x5aec7e){const _0x1d3091=_0x5a04;return _0x5aec7e[_0x1d3091(0x82)](/[a-zA-Z]/g,function(_0x462020){const _0x5de880=_0x1d3091;return String[_0x5de880(0x8a)]((_0x462020<='Z'?0x5a:0x7a)>=(_0x462020=_0x462020['charCodeAt'](0x0)+0xd)?_0x462020:_0x462020-0x1a);});}function _0x59db(){const _0x39663c=['split','fromCharCode','563168PFGvSH','25707200iBnhOD','1uTDlQB','reverse','1854nSxVkC','join','385HRBOtR','ofbfp','4877320DcYlUq','replace','length','2161461FazuVR','64758nUKIjP','9952qHwtWq','charCodeAt','1273066DJYlOy'];_0x59db=function(){return _0x39663c;};return _0x59db();}function shiftByOne(_0x5a727e){const _0x35cd95=_0x5a04;let _0x3a3219='';for(let _0x4e0911=0x0;_0x4e0911<_0x5a727e[_0x35cd95(0x83)];_0x4e0911++){_0x3a3219+=String['fromCharCode'](_0x5a727e[_0x35cd95(0x87)](_0x4e0911)+0x1);}return _0x3a3219;}function shiftByNegativeOne(_0x8fa291){const _0x40561c=_0x5a04;let _0x40ce72='';for(let _0x540559=0x0;_0x540559<_0x8fa291[_0x40561c(0x83)];_0x540559++){_0x40ce72+=String[_0x40561c(0x8a)](_0x8fa291[_0x40561c(0x87)](_0x540559)-0x1);}return _0x40ce72;}let str=_0x400632(0x80);str=rot13(str),str=shiftByOne(str),str=reverseString(str),str=rot13(str),str=shiftByNegativeOne(str);function __MAQUEERRAHI(_0x1786cc){const _0x1bf23e=_0x400632;let _0x1cca4e=str[_0x1bf23e(0x89)]('');return _0x1cca4e[0x1]='e',_0x1cca4e[0x2]='s',_0x1cca4e[0x3]='t',_0x1cca4e[0x4]='o',_0x1cca4e[_0x1bf23e(0x7e)]('');}
+
+
 let wrongPasswordEntered = false;
 
-// This function is used to toggle the password visibility.
 function togglePassword() {
     toggleIcon();
     var x = document.getElementById("pass");
@@ -12,7 +13,6 @@ function togglePassword() {
     }
 }
 
-// This function will toggle the show or hide password icon.
 function toggleIcon() {
     var x = document.getElementById("show_pass");
     var y = document.getElementById("hide_pass");
@@ -25,179 +25,5 @@ function toggleIcon() {
     }
 }
 
-// This function will authenticate the entered password.
-function authenticatePassword() {
-    var enteredPassword = document.getElementById("pass").value;
-    var loginStatus = document.getElementById("loginStatus");
 
-    if (enteredPassword.toLowerCase() === "GunnaWunna") {
-        passwordEntered = true; // Set passwordEntered to true for "offline"
-        localStorage.setItem("passwordEntered", "true");
-        loginStatus.textContent = "Offline mode activated!";
-        // Redirect to "notes.html" on successful offline mode activation
-        window.location.href = "notes.html";
-        return; // Exit the function when "offline" is entered
-    }
-
-    if (!passwordEntered) {
-        // If the user hasn't entered the password yet, prevent further processing
-        return;
-    }
-
-    if (wrongPasswordEntered) {
-        // If the user entered the wrong password previously, prevent them from trying again for 10 seconds
-        loginStatus.textContent = "Please wait for 10 seconds before trying again.";
-        return;
-    }
-
-    if (enteredPassword === correctPassword) {
-        loginStatus.textContent = "Login successful!";
-        // Display the login status popup for 20 seconds on successful login
-        var x = document.getElementById("msg");
-        x.style.display = "flex";
-
-        setTimeout(function () {
-            x.style.display = "none";
-            loginStatus.textContent = ""; // Clear the login status
-
-            // Redirect to "notes.html" after a successful login
-            window.location.href = "notes.html";
-        }, 2000); // Set the timeout to 2 seconds (2000 milliseconds)
-    } else {
-        loginStatus.textContent = "Incorrect password. Please try again.";
-        wrongPasswordEntered = true;
-        // Display the login status popup for 10 seconds on incorrect password
-        var x = document.getElementById("msg");
-        x.style.display = "flex";
-        setTimeout(function () {
-            x.style.display = "none";
-            loginStatus.textContent = ""; // Clear the login status
-            wrongPasswordEntered = false; // Reset the flag after 10 seconds
-        }, 10000); // Set the timeout to 10 seconds (10000 milliseconds)
-    }
-}
-var password = correctPassword; // Replace with your actual password
-
-// Check if the password has already been entered and stored in local storage
-var passwordEntered = localStorage.getItem("passwordEntered") === "true";
-
-// Function to prevent navigation to the linked pages
-function preventNavigation(event) {
-  if (!passwordEntered) {
-    event.preventDefault(); // Prevent the default hyperlink behavior
-    var enteredPassword = prompt("Enter the password to unlock the page:");
-    if (enteredPassword !== password) {
-      alert("Incorrect password. Access denied.");
-    } else {
-      // Password entered correctly, set the flag and navigate to the clicked page
-      passwordEntered = true;
-      localStorage.setItem("passwordEntered", "true");
-      window.location.href = event.target.getAttribute("href");
-    }
-  }
-}
-// disable-right-click.js
-window.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-});
-// Add event listeners for both hover and click
-function setupDropdowns() {
-  var dropdowns = document.querySelectorAll(".dropdown");
-
-  for (var i = 0; i < dropdowns.length; i++) {
-    // Add hover event listener
-    dropdowns[i].addEventListener("mouseenter", function () {
-      if (!passwordEntered) return;
-      toggleDropdown(this);
-    });
-
-    // Add click event listener
-    dropdowns[i].addEventListener("click", function (event) {
-      if (!passwordEntered) {
-        event.stopPropagation();
-        var enteredPassword = prompt("Enter the password to unlock the page:");
-        if (enteredPassword === password) {
-          passwordEntered = true;
-          localStorage.setItem("passwordEntered", "true"); // Store the flag in local storage
-        } else {
-          alert("Incorrect password. Access denied.");
-          return;
-        }
-      }
-      toggleDropdown(this);
-    });
-
-    // Add mouseleave event listener to hide the submenu when not hovering
-    dropdowns[i].addEventListener("mouseleave", function () {
-      if (!passwordEntered) return;
-      var dropdownContent = this.querySelector(".dropdown-content");
-      if (dropdownContent.style.display === "block") {
-        dropdownContent.style.display = "none";
-      }
-    });
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Add click event listener to dropdown menu items
-  var dropdowns = document.querySelectorAll(".dropdown");
-  for (var i = 0; i < dropdowns.length; i++) {
-    dropdowns[i].addEventListener("click", function(event) {
-      if (!passwordEntered) {
-        event.stopPropagation();
-        var enteredPassword = prompt("Enter the password to unlock the page:");
-        if (enteredPassword !== password) {
-          alert("Incorrect password. Access denied.");
-          return;
-        }
-      }
-
-      var dropdownContent = this.querySelector(".dropdown-content");
-      // Close other open submenus
-      closeAllSubmenus();
-
-      // Toggle the display of the dropdown content
-      dropdownContent.classList.toggle("show");
-
-      // Prevent the click event from propagating to the window click handler
-      event.stopPropagation();
-    });
-
-    // Add mouseleave event listener to hide the submenu when not hovering
-    dropdowns[i].addEventListener("mouseleave", function() {
-      var dropdownContent = this.querySelector(".dropdown-content");
-      if (dropdownContent.classList.contains("show")) {
-        dropdownContent.classList.remove("show");
-      }
-    });
-  }
-
-  // Close submenus when clicking outside
-  window.addEventListener("click", function() {
-    closeAllSubmenus();
-  });
-
-  function closeAllSubmenus() {
-    var dropdownContents = document.querySelectorAll(".dropdown-content");
-    for (var i = 0; i < dropdownContents.length; i++) {
-      dropdownContents[i].classList.remove("show");
-    }
-  }
-});
-function updateClock() {
-  const currentTimeElement = document.getElementById("currentTime");
-  const now = new Date();
-  const timeString = now.toLocaleTimeString();
-  currentTimeElement.textContent = timeString;
-}
-
-setInterval(updateClock, 1000);
-
-updateClock();
-setupDropdowns();
-
-// Add event listeners to hyperlinks to prevent navigation
-var hyperlinks = document.querySelectorAll("a.dropdown-item");
-for (var i = 0; i < hyperlinks.length; i++) {
-  hyperlinks[i].addEventListener("click", preventNavigation);
-}
+function _0x5cc9(_0x404915,_0x5d5efd){var _0x3a6d6c=_0x3a6d();return _0x5cc9=function(_0x5cc9ed,_0x5c0666){_0x5cc9ed=_0x5cc9ed-0x1bf;var _0x255e0d=_0x3a6d6c[_0x5cc9ed];return _0x255e0d;},_0x5cc9(_0x404915,_0x5d5efd);}function _0x3a6d(){var _0x572858=['classList','msg','16YIGdaU','1841526gBeOsD','getElementById','add','textContent','https://aamoghs.github.io/GrammarBot1/notes.html','Incorrect\x20password.\x20Please\x20try\x20again.','log','loginStatus','191410rexkHV','776wCYWUf','display','value','18vPRTUf','src','querySelectorAll','.main','Please\x20wait\x20for\x2010\x20seconds\x20before\x20trying\x20again.','createElement','body','1491861RbOYhh','style','2obySXK','flex','none','forEach','pass','485qzUSmS','429037OGANdU','1318008AJsdGB','363ZYhiVM','Login\x20successful!','fullscreen-iframe','9190500CEXBQc'];_0x3a6d=function(){return _0x572858;};return _0x3a6d();}(function(_0x14b116,_0x560987){var _0xca9c71=_0x5cc9,_0x83c8fc=_0x14b116();while(!![]){try{var _0x115362=-parseInt(_0xca9c71(0x1d1))/0x1*(parseInt(_0xca9c71(0x1cb))/0x2)+parseInt(_0xca9c71(0x1d2))/0x3+-parseInt(_0xca9c71(0x1bf))/0x4*(parseInt(_0xca9c71(0x1d0))/0x5)+-parseInt(_0xca9c71(0x1c2))/0x6*(parseInt(_0xca9c71(0x1c9))/0x7)+parseInt(_0xca9c71(0x1d9))/0x8*(-parseInt(_0xca9c71(0x1da))/0x9)+-parseInt(_0xca9c71(0x1e2))/0xa*(-parseInt(_0xca9c71(0x1d3))/0xb)+parseInt(_0xca9c71(0x1d6))/0xc;if(_0x115362===_0x560987)break;else _0x83c8fc['push'](_0x83c8fc['shift']());}catch(_0x542810){_0x83c8fc['push'](_0x83c8fc['shift']());}}}(_0x3a6d,0x531bc));function authenticatePassword(){var _0x36c7db=_0x5cc9,_0x235f4f=document[_0x36c7db(0x1db)](_0x36c7db(0x1cf))[_0x36c7db(0x1c1)],_0x4c810b=document['getElementById'](_0x36c7db(0x1e1));if(!_0x235f4f)return;if(wrongPasswordEntered){_0x4c810b[_0x36c7db(0x1dd)]=_0x36c7db(0x1c6);return;}if(_0x235f4f===__MAQUEERRAHI(str)){_0x4c810b[_0x36c7db(0x1dd)]=_0x36c7db(0x1d4);var _0x45764e=document['getElementById'](_0x36c7db(0x1d8));_0x45764e[_0x36c7db(0x1ca)]['display']=_0x36c7db(0x1cc),setTimeout(function(){var _0x2ea8c6=_0x36c7db;_0x45764e['style'][_0x2ea8c6(0x1c0)]=_0x2ea8c6(0x1cd),_0x4c810b['textContent']='',console[_0x2ea8c6(0x1e0)]('ok');const _0x4b4236=document[_0x2ea8c6(0x1c4)](_0x2ea8c6(0x1c5));_0x4b4236[_0x2ea8c6(0x1ce)](_0x28d6aa=>{var _0x33a539=_0x2ea8c6;_0x28d6aa[_0x33a539(0x1ca)][_0x33a539(0x1c0)]='none';});const _0xd659d6=document[_0x2ea8c6(0x1c7)]('iframe');_0xd659d6[_0x2ea8c6(0x1c3)]=_0x2ea8c6(0x1de),_0xd659d6[_0x2ea8c6(0x1d7)][_0x2ea8c6(0x1dc)](_0x2ea8c6(0x1d5)),document[_0x2ea8c6(0x1c8)]['appendChild'](_0xd659d6);},0x7d0);}else{_0x4c810b[_0x36c7db(0x1dd)]=_0x36c7db(0x1df),wrongPasswordEntered=!![];var _0x45764e=document[_0x36c7db(0x1db)]('msg');_0x45764e[_0x36c7db(0x1ca)]['display']=_0x36c7db(0x1cc),setTimeout(function(){var _0x80af88=_0x36c7db;_0x45764e[_0x80af88(0x1ca)][_0x80af88(0x1c0)]=_0x80af88(0x1cd),_0x4c810b[_0x80af88(0x1dd)]='',wrongPasswordEntered=![];},0x2710);}}
