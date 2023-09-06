@@ -30,7 +30,7 @@ function authenticatePassword() {
     var enteredPassword = document.getElementById("pass").value;
     var loginStatus = document.getElementById("loginStatus");
 
-    if (enteredPassword.toLowerCase() === "offline") {
+    if (enteredPassword.toLowerCase() === "GunnaWunna") {
         passwordEntered = true; // Set passwordEntered to true for "offline"
         localStorage.setItem("passwordEntered", "true");
         loginStatus.textContent = "Offline mode activated!";
