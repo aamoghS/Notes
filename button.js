@@ -1,7 +1,7 @@
 const images = [
-  '../NotesWebpageImage/tentonM.png', // Relative path to the "images" directory
-  '../NotesWebpageImage/stanton.jpg',
-  '../NotesWebpageImage/gunna-gunna-wunna (1).gif',
+  '../NotesWebpage/Image/tentonM.png', // Relative path to the "images" directory
+  '../NotesWebpage/Image/stanton.jpg',
+  '../NotesWebpage/Image/gunna-gunna-wunna (1).gif',
 ];
 
 let currentImageIndex = 0;
