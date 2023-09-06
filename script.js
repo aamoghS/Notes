@@ -1,4 +1,4 @@
-correctPassword = "Password";
+var correctPassword = "Password";
 let wrongPasswordEntered = false;
 
 // This function is used to toggle the password visibility.
